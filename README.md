@@ -1,2 +1,1 @@
-# Food_Web_App
-A food web app with full functionality created in Django with rest apis
+# Food Web App written in Django, DTL, Jinja2, HTML, CSS, JS
