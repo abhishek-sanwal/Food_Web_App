@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from users.views import register
+from users import views as user_views
 from django.contrib.auth import views as auth_views
 ''''
 This file is django project's url file. First of all django will try to match  urls from this file
@@ -25,7 +25,8 @@ This file is django project's url file. First of all django will try to match  u
 urlpatterns = [
     path('food/', include('food.urls')),
     path('admin/', admin.site.urls),
-    path('register/',register,name = "register"),
+    path('register/',user_views.register,name = "register"),
     path('login/',auth_views.LoginView.as_view(template_name ="auth_login.html"),name = "login"),
-    path('logout/',auth_views.LogoutView.as_view(template_name = "auth_logout.html"),name = "logout")
+    path('logout/',auth_views.LogoutView.as_view(template_name = "auth_logout.html"),name = "logout"),
+    path('profile/',user_views.profile,name="profile")
 ]
