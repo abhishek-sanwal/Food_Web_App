@@ -1,0 +1,26 @@
+<!-- To load base.html file content into this file
+
+Django is based on DRY principle (Dont' Repeat Yourself) 
+SO we don't need to  repetative write html code again.
+
+-->
+
+{% extends 'base.html' %}
+
+    {% block body %}
+    <!--- Using Bootstrap inbuilt 12 columns format to put data on website -->
+    <div class = "container">
+        <div class =  "row" >
+            <div class = "col-md-6">
+                <img height = "400" width = "400" src = "{{ img }}" alt="" class ="card">
+            </div>
+            <div class = "col-md-6">
+                <h1> {{ name }}</h1>
+                <h2>{{ description }} </h2>
+                <h3>Rs {{ price }}/-</h3>
+                <!-- DTL format to map url with app namespace-->
+                <a href =" {% url 'food:delete' id %}"> Delete Item </a>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

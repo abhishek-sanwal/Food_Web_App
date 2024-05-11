@@ -1,0 +1,19 @@
+<!-- To load base.html file content into this file
+
+Django is based on DRY principle (Dont' Repeat Yourself) 
+SO we don't need to  repetative write html code again.
+
+-->
+{% extends 'base.html' %}
+
+{% block body %}
+
+<!-- Creating a form to confirm deletion of item by an app user-->
+<form method="post">
+    <!-- To avoid csrf attacks Mandatory for Django forms-->
+    {% csrf_token %}
+    <h1>Are you sure you want to delete {{ item.item_name }}</h1>
+    <button type = "submit"> Confirm Delete </button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+<!-- To load base.html file content into this file
+We are using DTL and Jinja2 template language here.
+Django is based on DRY principle (Dont' Repeat Yourself) 
+SO we don't need to  repetative write html code again.
+
+-->
+{% extends 'base.html' %}
+{% block body %}
+
+<!-- Creating a form to confirm deletion of item by an app user-->
+<form method="post">
+
+    <!-- To avoid csrf attacks Mandatory for Django forms-->
+    {% csrf_token %}
+        <!-- Form with model class will be rendered here-->
+        {{ form }}
+
+    <button type = "submit">Create</button>
+
+</form>
+
+{% endblock %}
