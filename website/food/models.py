@@ -13,6 +13,6 @@ class Item(models.Model):
     item_price = models.IntegerField(default = 100)
     item_image = models.CharField(max_length=300,default="https://www.food4fuel.com/wp-content/uploads/woocommerce-placeholder-600x600.png")
     
-    def __str__(self):
+    def __str__(self)->str:
         
         return self.item_name
