@@ -11,7 +11,9 @@ class Item(models.Model):
     item_name = models.CharField(max_length=100)
     item_description = models.CharField(max_length=200)
     item_price = models.IntegerField(default = 100)
-    item_image = models.CharField(max_length=300,default="https://www.food4fuel.com/wp-content/uploads/woocommerce-placeholder-600x600.png")
+    item_image = models.CharField(max_length=300,
+                default="https://www.food4fuel.com/wp-content\
+                /uploads/woocommerce-placeholder-600x600.png")
     
     def __str__(self)->str:
         

@@ -53,7 +53,8 @@ def add_item(request):
     if form.is_valid():
         
         form.save()
-        messages.success(request,"Item Saved Successfully.")
+        item_name = form.cleaned_data("item_name")
+        messages.success(request,f"{item_name} product added successfully.")
         return redirect('show')
     
     return render(request,'create.html',{
@@ -72,14 +73,15 @@ def update_item(request,item_id):
     
     if form.is_valid():
         form.save()
-        messages.success(request,"Item Updated Successfully.")
+        item_name = form.cleaned_data("item_name")
+        messages.success(request,f"{item_name} product updated Successfully.")
         return redirect('show')
 
-    
-    return render(request,'create.html',{
-        'form':form,
-        'item':item
-    })    
+    return render(request,
+                  'create.html',{
+                'form':form,
+                'item':item
+                 })    
 
 '''
 View for deleting an particular item from db using item_id
@@ -92,9 +94,11 @@ def delete_item(request,item_id):
     if request.method == "POST":
         
         item.delete()
-        messages.success(request,"Item has been deleted successfuly.")
+        item_name = item.cleaned_data("item_name")
+        messages.success(request,f"{item_name} has been deleted successfuly.")
         return redirect('show')
     
-    return render(request,'confirm_delete.html',{
-        'item':item
-        })
+    return render(request,
+                  'confirm_delete.html',{
+                  'item':item
+                })

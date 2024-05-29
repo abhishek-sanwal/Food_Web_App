@@ -10,5 +10,4 @@ class ItemForm(forms.ModelForm):
     class Meta:
         
         model = Item
-        # __all__ No attribute should be empty
-        fields = "__all__"
+        fields = ["item_name","item_description","item_price","item_image"]
