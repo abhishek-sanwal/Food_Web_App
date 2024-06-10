@@ -4,19 +4,22 @@ Django is based on DRY principle (Dont' Repeat Yourself)
 SO we don't need to  repetative write html code again.
 
 -->
-{% extends 'base.html' %}
-{% block body %}
+{% extends 'base.html' %} {% block body %}
 
-<!-- Creating a form to confirm deletion of item by an app user-->
-<form method="post">
-
+<fieldset class="item-create">
+  <legend>Add a dish</legend>
+  <form method="post">
     <!-- To avoid csrf attacks Mandatory for Django forms-->
     {% csrf_token %}
-        <!-- Form with model class will be rendered here-->
-        {{ form }}
+    <!-- Form with model class will be rendered here-->
+    {% for field in form %}
+    <br />
 
-    <button type = "submit">Create</button>
-
-</form>
+    {{ field.label_tag }} {{ field }} {% endfor %}
+    <br />
+    <button type="submit">Create</button>
+  </form>
+</fieldset>
+<!-- Creating a form to confirm deletion of item by an app user-->
 
 {% endblock %}

@@ -5,11 +5,11 @@ from django.db import models
 
 
 class RegisterForm(UserCreationForm):
-    
+
     email = models.EmailField()
-    
+
     class Meta:
-        
+
         model = User
-        fields = ['username','email','password1','password2']        
-        
+        # Fields that should included in form
+        fields = ['username', 'email', 'password1', 'password2']

@@ -1,8 +1,29 @@
 
-.navbar > a{
+div > a{
+    padding: 9px;
+}
+
+a:hover{
+
+    scale: 1.04;
+    transition: ease-in-out;
+}
+.navbar-brand{
+
+    background: linear-gradient(rgb(255, 153, 0),rgb(246, 255, 0),rgb(0, 128, 21),rgb(128, 0, 96))
+    to right;
+    object-fit: cover;
+}
+.item-create{
+    margin-top: 10px;
+    border: 5px solid black;
+    text-align: center;
+    width: 50%;
+    height: 50%;
     margin-left: auto;
     margin-right: auto;
 }
-.navbar-brand{
-    margin-left: 5px;
+
+form > input{
+    margin: 2px;
 }
