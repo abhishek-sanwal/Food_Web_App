@@ -1,22 +1,26 @@
-
-{% extends 'base.html' %}
-
-{% block body %}
-    <br>
-    <br>
-    {% for item in lis %}
-        <div class = "row">
-            <div class = "col-md-3 offset-md-2">
-                <img class = "card" style="width:150px;height:125px;" src = "{{ item.item_image }}" alt="">
-            </div>
-            <div class = "col-md-4">
-                <h3>{{ item.item_name }}</h3>
-                <h5>{{ item.item_description }}</h5>
-                <h6>Rs {{ item.item_price }} Only/-</h6>
-            </div>
-            <div class = "col-md-2">
-                <a href = "{% url 'food:display' item.id %}" class ="btn btn-success"> Details</a>
-            </div>
-        </div>
-    {% endfor %}
-{% endblock %}
+{% extends 'base.html' %} {% block body %}
+<br />
+<br />
+{% for item in lis %}
+<div class="row">
+  <div class="col-md-3 offset-md-2">
+    <img
+      class="card"
+      style="width: 150px; height: 125px"
+      src="{{ item.item_image }}"
+      alt=""
+    />
+  </div>
+  <div class="col-md-4">
+    <h3>{{ item.item_name }}</h3>
+    <h5>{{ item.item_description }}</h5>
+    <h6>Rs {{ item.item_price }} Only/-</h6>
+    <h6>Added by {{ item.user }}</h6>
+  </div>
+  <div class="col-md-2">
+    <a href="{% url 'food:display' item.id %}" class="btn btn-success">
+      Details</a
+    >
+  </div>
+</div>
+{% endfor %} {% endblock %}

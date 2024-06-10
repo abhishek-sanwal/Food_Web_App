@@ -1,7 +1,10 @@
 */__pycache__
 */migrations
 db.sqlite3
-wsgi.py
 .venv/
 */*.log
 .env
+.DS_Store
+*/.DS_Store
+*/*/.DS_Store
+*/*/.DS_Store
